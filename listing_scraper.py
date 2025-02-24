@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-import json  # Added import
+import json
 from scraping_modules.scrape_immobiliare import scrape_immobiliare
 
-def scrape_all_listings(max_pages=None):
+def scrape_all_listings():
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
@@ -12,7 +12,7 @@ def scrape_all_listings(max_pages=None):
 
     try:
         # Scrape Immobiliare.it
-        immobiliare_listings = scrape_immobiliare(driver, max_pages=max_pages)
+        immobiliare_listings = scrape_immobiliare(driver)
         all_listings.extend(immobiliare_listings)
         
         # Save to JSON
@@ -26,4 +26,4 @@ def scrape_all_listings(max_pages=None):
     return all_listings
 
 if __name__ == "__main__":
-    scrape_all_listings(max_pages=2)  # Test with 2 pages
+    scrape_all_listings()

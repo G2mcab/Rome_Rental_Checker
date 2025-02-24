@@ -1,8 +1,8 @@
 # Configuration for Immobiliare.it scraping parameters
 IMMOBILIARE_CONFIG = {
     "base_url": "https://www.immobiliare.it/affitto-case/roma/",
-    "number_of_pages": 2,  # Numero di pagine da scrapare (Number of pages to scrape)
-    "sorting_type": None,  # Tipo di ordinamento (Sorting type), None = default sorting
+    "number_of_pages": 10,  # Numero di pagine da scrapare (Number of pages to scrape)
+    "sorting_type": "prezzo&ordine=asc",  # Tipo di ordinamento (Sorting type), None = default sorting
     # Opzioni di ordinamento disponibili (Available sorting options):
     # "prezzo&ordine=asc"  # Prezzo crescente (Price ascending)
     # "prezzo&ordine=desc" # Prezzo decrescente (Price descending)
